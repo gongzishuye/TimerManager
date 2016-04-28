@@ -48,7 +48,7 @@ public:
 		{
 			if (_enable)
 			{
-				auto &time_span = std::chrono::duration_cast<std::chrono::milliseconds>
+				const auto &time_span = std::chrono::duration_cast<std::chrono::milliseconds>
 					(std::chrono::steady_clock::now() - _time);
 
 				if (time_span.count() > _delay)
@@ -82,7 +82,7 @@ public:
 
 	static auto add_timer(const long long &delay, func_t &func)
 	{
-		auto &new_timer = std::make_shared<timer>(delay, func);
+		const auto &new_timer = std::make_shared<timer>(delay, func);
 
 		get_timers().push_back(new_timer);
 
