@@ -5,17 +5,13 @@ Crossplatform library for simple working with timers
 #include <iostream>
 #include "timer_manager.hpp"
 
-using namespace std;
-
-void main(void)
+int main()
 {
-	timer_manager::add_timer(5000,
-		[](auto &timer_ptr)
+	timer_manager::add_timer(1000, [](const timer_manager::timer_ptr_t &timer_ptr)
 	{
-		cout << "Hello, World!" << endl;
+		std::cout << "Hello, World!" << std::endl;
+	}, false);
 
-		timer_manager::remove_timer(timer_ptr);
-	});
 
 	while (true)
 	{
@@ -23,6 +19,6 @@ void main(void)
 			break;
 	}
 
-	cin.get();
+	return 0;
 }
 ```
