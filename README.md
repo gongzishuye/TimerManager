@@ -12,7 +12,6 @@ int main()
 		std::cout << "Hello, World!" << std::endl;
 	}, false);
 
-
 	while (true)
 	{
 		if (!timer_manager::process())
